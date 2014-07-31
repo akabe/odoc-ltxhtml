@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="index.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Fourier" rel="Chapter" href="Fourier.html"><title>Fourier</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Fourier.html">Fourier</a></h1>
+
+<pre><span class="keyword">module</span> Fourier: <code class="code">sig</code> <a href="Fourier.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Fourier Transform<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALpi"><span class="keyword">val</span> pi</span> : <code class="type">float</code></pre><div class="info ">
+Constant <img class="ltxhtml" alt="$\pi$" src="ltx/f30fdded685c83b0e7b446aa9c9aa120.gif">.<br>
+</div>
+
+<pre><span id="VALdft_aux"><span class="keyword">val</span> dft_aux</span> : <code class="type">float -> Complex.t list -> Complex.t list</code></pre><div class="info ">
+An auxiliary routine for <code class="code">dft</code> and <code class="code">idft</code>.<br>
+</div>
+
+<pre><span id="VALdft"><span class="keyword">val</span> dft</span> : <code class="type">Complex.t list -> Complex.t list</code></pre><div class="info ">
+A naive implementation of Discrete Fourier Transform (DFT).
+ DFT is defined as
+ <p><img class="ltxhtml" alt="\[y_k = \sum^{N-1}_{t = 0} x_t \exp\left( -i \frac{2 \pi tk}{N} \right)
+   \quad (k = 0, \dots, N-1)\]" src="ltx/6631c0981862084955b6f8fabf0a27d2.gif"></p>
+ where <img class="ltxhtml" alt="$x_1, x_2 \dots, x_{N-1}$" src="ltx/7f54372f3cb0b20476023654d6d09432.gif"> are time-domain data points,
+ <img class="ltxhtml" alt="$y_1, y_2 \dots, y_{N-1}$" src="ltx/42a9f37356b4cc22c48cd5848fa18d86.gif"> are frequency-domain data points.<br>
+</div>
+
+<pre><span id="VALidft"><span class="keyword">val</span> idft</span> : <code class="type">Complex.t list -> Complex.t list</code></pre><div class="info ">
+A naive implementation of Inverse Discrete Fourier Transform (IDFT),
+ the inverse transformation of DFT:
+ <p><img class="ltxhtml" alt="\[x_t = \sum^{N-1}_{k = 0} y_k \exp\left( i \frac{2 \pi tk}{N} \right)
+   \quad (t = 0, \dots, N-1)\]" src="ltx/34f0e6cc7f43e2c5b466c9acb71a7905.gif"></p><br>
+</div>
+
+<pre><span id="VALfft_aux"><span class="keyword">val</span> fft_aux</span> : <code class="type">float -> Complex.t list -> Complex.t list</code></pre><div class="info ">
+An auxiliary routine for <code class="code">fft</code> and <code class="code">ifft</code>.<br>
+</div>
+
+<pre><span id="VALfft"><span class="keyword">val</span> fft</span> : <code class="type">Complex.t list -> Complex.t list</code></pre><div class="info ">
+An implementation of Cooley-Tukey Fast Fourier Transform (FFT) algorithm.
+ <code class="code">dft</code> takes <img class="ltxhtml" alt="$O(n^2)$" src="ltx/3987120c67ed5a9162aa9841b531c3a9.gif"> time, but <code class="code">fft</code> takes <img class="ltxhtml" alt="$O(n \log n)$" src="ltx/ff514eba41c59f90c20d895e80719763.gif"> time!<br>
+</div>
+
+<pre><span id="VALifft"><span class="keyword">val</span> ifft</span> : <code class="type">Complex.t list -> Complex.t list</code></pre><div class="info ">
+An implementation of Inverse Fast Fourier Transform (IFFT).
+ <code class="code">idft</code> takes <img class="ltxhtml" alt="$O(n^2)$" src="ltx/3987120c67ed5a9162aa9841b531c3a9.gif"> time, but <code class="code">ifft</code> takes <img class="ltxhtml" alt="$O(n \log n)$" src="ltx/ff514eba41c59f90c20d895e80719763.gif"> time!<br>
+</div>
+</body></html>
