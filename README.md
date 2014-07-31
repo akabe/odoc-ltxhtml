@@ -34,3 +34,6 @@ Simple Example
 ```
 $ make example
 ```
+
+The generated HTML documentation of this example is at
+http://akabe.github.io/odoc-ltxhtml/ .
